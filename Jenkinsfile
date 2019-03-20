@@ -8,8 +8,13 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh 'mvn -B -DskipTests clean package' 
+                sh 'mvn gatling:test' 
             }
+        }
+    }
+    post {
+        always {
+            gatlingArchive()
         }
     }
 }

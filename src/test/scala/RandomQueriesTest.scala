@@ -30,8 +30,9 @@ class RandomQueriesTest extends Simulation {
 
 
   setUp(scn.inject(
-    rampConcurrentUsers(1) to (100) during(10 seconds),
-    constantConcurrentUsers(100) during(1 minutes),
-    rampConcurrentUsers(100) to (1) during(10 seconds)
+    atOnceUsers(10)
+//    rampConcurrentUsers(1) to (100) during(10 seconds),
+//    constantConcurrentUsers(100) during(1 minutes),
+//    rampConcurrentUsers(100) to (1) during(10 seconds)
   ).protocols(httpProtocol))
 }
